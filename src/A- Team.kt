@@ -1,12 +1,9 @@
 fun main() {
-    val PEOPLE_NUM = 3
-    val n = readLine()!!.toInt()
-
-    val sures = Array(n){IntArray(PEOPLE_NUM)}
-    for (i in 0 until sures.size) {
-        for (j in 0 until PEOPLE_NUM) {
-            sures[i][j] = readLine()!!.toInt()
-        }
+    val numberOfLines = readLine()!!.toInt()
+    var implementations = 0
+    for(line in 1..numberOfLines){
+        val sum = readLine()!!.split(' ').map { num -> if (num.isNotEmpty()) num.toInt() else 0 }.sum()
+        if (sum >= 2) implementations++
     }
-    println(sures)
+    println(implementations)
 }
